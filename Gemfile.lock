@@ -2,9 +2,7 @@ PATH
   remote: .
   specs:
     feedbook (0.1.0)
-      pry-rails
       rails (~> 5.1.6)
-      rspec-rails
 
 GEM
   remote: https://rubygems.org/
