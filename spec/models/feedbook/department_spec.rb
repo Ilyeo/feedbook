@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-module Feedbook
-  RSpec.describe Department, type: :model do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
+RSpec.describe Feedbook::Department do
+  it { should respond_to(:name) }
+  it { should validate_presence_of(:name) }
 end
