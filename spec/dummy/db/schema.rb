@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413203155) do
+ActiveRecord::Schema.define(version: 20180417235316) do
 
   create_table "feedbook_employees", force: :cascade do |t|
     t.text "email"
-    t.text "ancestry"
+    t.string "ancestry"
     t.text "ancestry_history"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_feedbook_employees_on_ancestry"
   end
 
 end
