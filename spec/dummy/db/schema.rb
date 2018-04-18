@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20180417235316) do
 
+  create_table "feedbook_departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "feedbook_employees", force: :cascade do |t|
     t.text "email"
     t.string "ancestry"
