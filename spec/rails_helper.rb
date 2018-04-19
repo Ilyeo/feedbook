@@ -4,11 +4,12 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../dummy/config/environment.rb', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 # Prevent database truncation if the environment is production
+require 'pry-rails'
 require 'rspec/rails'
-require 'shoulda/matchers'
-require 'factory_bot_rails'
-require 'rails-controller-testing'
 require 'ancestry'
+require 'factory_bot_rails'
+require 'shoulda/matchers'
+require 'rails-controller-testing'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
