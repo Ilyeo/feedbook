@@ -8,6 +8,8 @@ RSpec.describe Feedbook::Skill, type: :model do
   describe "association's model" do
     it { should belong_to(:department) }
     it { should belong_to(:skill_group) }
+    it { should have_many(:employee_has_skills) }
+    it { should have_many(:employees).through(:employee_has_skills) }
   end
 
   describe "validations" do
