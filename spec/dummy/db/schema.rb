@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420161329) do
+ActiveRecord::Schema.define(version: 20180423181522) do
 
   create_table "feedbook_departments", force: :cascade do |t|
     t.string "name"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20180420161329) do
   create_table "feedbook_position_has_employees", force: :cascade do |t|
     t.integer "position_id"
     t.integer "employee_id"
-    t.datetime "date"
     t.text "notes"
     t.string "version"
     t.datetime "created_at", null: false
@@ -63,6 +62,16 @@ ActiveRecord::Schema.define(version: 20180420161329) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "feedbook_skill_has_positions", force: :cascade do |t|
+    t.integer "skill_id"
+    t.integer "position_id"
+    t.string "skill_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position_id"], name: "index_feedbook_skill_has_positions_on_position_id"
+    t.index ["skill_id"], name: "index_feedbook_skill_has_positions_on_skill_id"
   end
 
   create_table "feedbook_skills", force: :cascade do |t|
