@@ -14,11 +14,11 @@ ActiveRecord::Schema.define(version: 20180426155129) do
 
   create_table "feedbook_answers", force: :cascade do |t|
     t.integer "question_id"
-    t.integer "employee_has_session_id"
+    t.integer "employees_session_id"
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["employee_has_session_id"], name: "index_feedbook_answers_on_employee_has_session_id"
+    t.index ["employees_session_id"], name: "index_feedbook_answers_on_employees_session_id"
     t.index ["question_id"], name: "index_feedbook_answers_on_question_id"
   end
 
@@ -26,19 +26,6 @@ ActiveRecord::Schema.define(version: 20180426155129) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "feedbook_employee_has_sessions", force: :cascade do |t|
-    t.integer "session_id"
-    t.text "notes"
-    t.boolean "completed"
-    t.integer "manager_id"
-    t.integer "employee_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_feedbook_employee_has_sessions_on_employee_id"
-    t.index ["manager_id"], name: "index_feedbook_employee_has_sessions_on_manager_id"
-    t.index ["session_id"], name: "index_feedbook_employee_has_sessions_on_session_id"
   end
 
   create_table "feedbook_employee_has_skills", force: :cascade do |t|
@@ -59,6 +46,19 @@ ActiveRecord::Schema.define(version: 20180426155129) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_feedbook_employees_on_ancestry"
+  end
+
+  create_table "feedbook_employees_sessions", force: :cascade do |t|
+    t.integer "session_id"
+    t.text "notes"
+    t.boolean "completed"
+    t.integer "manager_id"
+    t.integer "employee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_feedbook_employees_sessions_on_employee_id"
+    t.index ["manager_id"], name: "index_feedbook_employees_sessions_on_manager_id"
+    t.index ["session_id"], name: "index_feedbook_employees_sessions_on_session_id"
   end
 
   create_table "feedbook_position_has_employees", force: :cascade do |t|

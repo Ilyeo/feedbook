@@ -1,5 +1,5 @@
 module Feedbook
-  class EmployeeHasSession < ApplicationRecord
+  class EmployeesSession < ApplicationRecord
     belongs_to :session
     belongs_to :manager, class_name: 'Employee'
     belongs_to :employee, class_name: 'Employee'

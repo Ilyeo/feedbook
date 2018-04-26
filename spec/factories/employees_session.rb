@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :employee_has_session, class: Feedbook::EmployeeHasSession do
+  factory :employees_session, class: Feedbook::EmployeesSession do
     association :session, factory: :session
     association :manager, factory: :employee, email: 'victor.velazquez@magmalabs.io'
     association :employee, factory: :employee
