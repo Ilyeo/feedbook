@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 module Feedbook
   RSpec.describe EmployeeHasSkill, type: :model do
     it { should respond_to(:version) }
