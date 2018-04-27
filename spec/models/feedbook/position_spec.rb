@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Feedbook::Position, type: :model do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:job_description) }

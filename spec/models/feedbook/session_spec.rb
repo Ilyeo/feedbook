@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Feedbook::Session, type: :model do
   it { should validate_presence_of(:session_type) }
   it 'creates model from factory' do

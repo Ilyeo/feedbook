@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Feedbook::PositionHasEmployee, type: :model do
   it { should belong_to(:position) }
   it { should belong_to(:employee) }
